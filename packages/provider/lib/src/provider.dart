@@ -250,10 +250,11 @@ class Provider<T> extends ValueDelegateWidget<T>
   /// [StatefulWidget].
   static T of<T>(BuildContext context, {bool listen = true}) {
     // this is required to get generic Type
-    final type = _typeOf<InheritedProvider<T>>();
+    var type = _typeOf<InheritedProvider<T>>();
     final provider = listen
-        ? context.dependOnInheritedWidgetOfExactType() as InheritedProvider<T>
-        : context.getElementForInheritedWidgetOfExactType()?.widget
+        ? context.dependOnInheritedWidgetOfExactType<type>()
+            as InheritedProvider<T>
+        : context.getElementForInheritedWidgetOfExactType<type>()?.widget
             as InheritedProvider<T>;
 
     if (provider == null) {
