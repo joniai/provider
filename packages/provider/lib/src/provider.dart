@@ -252,8 +252,9 @@ class Provider<T> extends ValueDelegateWidget<T>
     // this is required to get generic Type
     final type = _typeOf<InheritedProvider<T>>();
     final provider = listen
-        ? context.dependOnInheritedWidgetOfExactType() as InheritedProvider<T>
-        : context.getElementForInheritedWidgetOfExactType()?.widget
+        ? context.dependOnInheritedWidgetOfExactType<type>()
+            as InheritedProvider<T>
+        : context.getElementForInheritedWidgetOfExactType<type>()?.widget
             as InheritedProvider<T>;
 
     if (provider == null) {
