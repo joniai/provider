@@ -16,8 +16,8 @@ void main() {
   test('cloneWithChild works', () {
     final provider = Provider(
       builder: (_) => 42,
-      child: Container(),
       key: const ValueKey(42),
+      child: Container(),
     );
 
     final newChild = Container();

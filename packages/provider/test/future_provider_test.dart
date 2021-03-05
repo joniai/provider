@@ -170,10 +170,10 @@ Exception:
       final provider = FutureProvider<int>.value(
         value: Future<int>.value(),
         initialData: 42,
-        child: Container(),
         catchError: (_, __) => 42,
         key: const Key('42'),
         updateShouldNotify: (_, __) => true,
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);
@@ -190,10 +190,10 @@ Exception:
       final provider = FutureProvider<int>(
         builder: (_) => Future<int>.value(),
         initialData: 42,
-        child: Container(),
         catchError: (_, __) => 42,
         key: const Key('42'),
         updateShouldNotify: (_, __) => true,
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);

@@ -112,7 +112,7 @@ class CounterLabel extends StatelessWidget {
         ),
         Text(
           '${counter.count}',
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.headline4,
         ),
       ],
     );

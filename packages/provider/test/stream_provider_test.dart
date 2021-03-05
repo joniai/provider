@@ -200,10 +200,10 @@ Exception:
       final provider = StreamProvider<int>.value(
         value: const Stream<int>.empty(),
         initialData: 42,
-        child: Container(),
         catchError: (_, __) => 42,
         key: const Key('42'),
         updateShouldNotify: (_, __) => true,
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);
@@ -220,10 +220,10 @@ Exception:
       final provider = StreamProvider<int>.controller(
         builder: (_) => StreamController<int>(),
         initialData: 42,
-        child: Container(),
         catchError: (_, __) => 42,
         key: const Key('42'),
         updateShouldNotify: (_, __) => true,
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);

@@ -51,8 +51,8 @@ void main() {
     test('works with MultiProvider #3', () {
       final provider = ChangeNotifierProvider<ChangeNotifier>(
         builder: (_) => ChangeNotifier(),
-        child: Container(),
         key: const Key('42'),
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);

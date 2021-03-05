@@ -77,7 +77,7 @@ abstract class DelegateWidget extends StatefulWidget {
   /// The argument [delegate] must not be `null`.
   const DelegateWidget({
     Key key,
-    this.delegate,
+    @required this.delegate,
   })  : assert(delegate != null),
         super(key: key);
 
@@ -169,7 +169,7 @@ class _DelegateElement extends StatefulElement {
   DelegateWidget get widget => super.widget as DelegateWidget;
 
   @override
-  InheritedWidget inheritFromElement(Element ancestor, {Object aspect}) {
+  InheritedWidget dependOnInheritedElement(Element ancestor, {Object aspect}) {
     assert(() {
       if (_debugIsInitDelegate) {
         final targetType = ancestor.widget.runtimeType;
@@ -191,7 +191,7 @@ whenever the dependencies change thereafter.''');
       }
       return true;
     }());
-    return super.inheritFromElement(ancestor, aspect: aspect);
+    return super.dependOnInheritedElement(ancestor, aspect: aspect);
   }
 }
 

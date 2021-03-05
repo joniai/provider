@@ -50,9 +50,9 @@ void main() {
     test('cloneWithChild works', () {
       final provider = Provider.value(
         value: 42,
-        child: Container(),
         key: const ValueKey(42),
         updateShouldNotify: (int _, int __) => true,
+        child: Container(),
       );
 
       final newChild = Container();

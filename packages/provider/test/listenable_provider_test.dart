@@ -52,8 +52,8 @@ void main() {
       final provider = ListenableProvider<ChangeNotifier>(
         builder: (_) => ChangeNotifier(),
         dispose: (_, n) {},
-        child: Container(),
         key: const Key('42'),
+        child: Container(),
       );
       var child2 = Container();
       final clone = provider.cloneWithChild(child2);

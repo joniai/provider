@@ -147,8 +147,8 @@ class StreamProvider<T> extends ValueDelegateWidget<Stream<T>>
       builder: (_, snapshot) {
         return InheritedProvider<T>(
           value: _snapshotToValue(snapshot, context, catchError, this),
-          child: child,
           updateShouldNotify: updateShouldNotify,
+          child: child,
         );
       },
     );
